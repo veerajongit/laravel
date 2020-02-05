@@ -28,11 +28,11 @@ services:
         depends_on:
             # will start php and mysql service before starting
             - php
-            - mariadb
+            - mysql
         networks: 
             - laravel
 
-    mariadb:
+    mysql:
         image: mariadb
         container_name: mariadb
         restart: unless-stopped
@@ -83,4 +83,4 @@ services:
         networks:
             - laravel
         environment:
-            PMA_HOST: mariadb
+            PMA_HOST: mysql
